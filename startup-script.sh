@@ -1,3 +1,6 @@
+set -v
+
+# [START getting_started_gce_startup_script]
 # Install Stackdriver logging agent
 curl -sSO https://dl.google.com/cloudagents/install-logging-agent.sh
 sudo bash install-logging-agent.sh
@@ -28,3 +31,4 @@ cp /opt/app/gce/python-app.conf /etc/supervisor/conf.d/python-app.conf
 # Start service via supervisorctl
 supervisorctl reread
 supervisorctl update
+# [END getting_started_gce_startup_script]
