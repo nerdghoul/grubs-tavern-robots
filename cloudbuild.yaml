@@ -1,0 +1,6 @@
+steps:
+- id 'build scurvy-bot'
+  name: 'gcr.io/cloud-builders/docker'
+  args: [ 'build', '-t', 'gcr.io/grubstavern/scurvybot', '.' ]
+images:
+- 'gcr.io/grubstavern/scurvybot'
