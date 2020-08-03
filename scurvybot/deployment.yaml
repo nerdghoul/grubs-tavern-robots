@@ -14,9 +14,9 @@ spec:
       containers:
       - name: scurvy-bot-app
         image: gcr.io/grubstavern/scurvy-bot:latest
-      env:
-        - name: SCURVY_DISCORD_TOKEN
-          valueFrom:
-            secretKeyRef:
-              name: scurvy-token
-              key: discord
+        env:
+          - name: SCURVY_DISCORD_TOKEN
+            valueFrom:
+              secretKeyRef:
+                name: scurvy-token
+                key: discord
