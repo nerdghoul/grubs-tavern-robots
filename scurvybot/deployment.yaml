@@ -1,0 +1,22 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: scurvy-bot-worker
+  labels:
+    app: scurvy-bot
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: scurvy-bot
+    spec:
+      containers:
+      - name: scurvy-bot-app
+        image: gcr.io/grubstavern/scurvy-bot:latest
+      env:
+        - name: SCURVY_DISCORD_TOKEN
+          valueFrom:
+            secretKeyRef:
+              name: scurvy-token
+              key: discord
